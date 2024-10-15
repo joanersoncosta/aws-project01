@@ -1,5 +1,6 @@
 package com.github.joanerson.aws_projecto01.produto.domain;
 
+import com.github.joanerson.aws_projecto01.produto.application.api.request.NovoProdutoRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,4 +33,7 @@ public class Produto {
     private String codigo;
 
     private float preco;
+
+    public Produto(NovoProdutoRequest novoProdutoRequest) {
+    }
 }
