@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Log4j2
 @RequiredArgsConstructor
 public class TesteHomeControllerImpl implements TesteHomeController {
-   private final CreateDogRequest createDogRequest;
 
     @Override
     public CreateDogRequest createDog(CreateDogRequest createDogRequest) {
         log.info("[start] TesteHomeControllerImpl - createDog");
-        log.info("[createDogRequest] {}", createDogRequest);
+        log.info("[createDogRequest] {}", createDogRequest.toString());
         return createDogRequest;
     }
 
