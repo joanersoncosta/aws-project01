@@ -11,13 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TesteHomeControllerImpl implements TesteHomeController {
 
     @Override
-    public CreateDogRequest createDog(CreateDogRequest createDogRequest) {
-        log.info("[start] TesteHomeControllerImpl - createDog");
-        log.info("[createDogRequest] {}", createDogRequest.toString());
-        return createDogRequest;
-    }
-
-    @Override
     public String getTesteHome(String nome) {
         log.info("[start] TesteHomeControllerImpl - getTesteHome");
         log.info("[nome] {}", nome);

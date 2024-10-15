@@ -12,8 +12,4 @@ public interface TesteHomeController {
     @GetMapping("/dog/{nome}")
     String getTesteHome(@PathVariable String nome);
 
-    @ResponseStatus(code = HttpStatus.OK)
-    @GetMapping("/dog")
-    CreateDogRequest createDog(@RequestBody CreateDogRequest createDogRequest);
-
 }
