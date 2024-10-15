@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.joanerson</groupId>
 	<artifactId>aws_projecto01</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>aws_projecto01</name>
 	<description>Projeto 01</description>
 	<properties>

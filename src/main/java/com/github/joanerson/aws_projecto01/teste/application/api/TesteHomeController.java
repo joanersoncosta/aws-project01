@@ -1,5 +1,6 @@
 package com.github.joanerson.aws_projecto01.teste.application.api;
 
+import com.github.joanerson.aws_projecto01.teste.application.api.request.CreateDogRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,4 +11,9 @@ public interface TesteHomeController {
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping("/dog/{nome}")
     String getTesteHome(@PathVariable String nome);
+
+    @ResponseStatus(code = HttpStatus.CREATED)
+    @PostMapping("/dog")
+    CreateDogRequest createDog(@RequestBody CreateDogRequest createDogRequest);
+
 }
