@@ -35,5 +35,9 @@ public class Produto {
     private float preco;
 
     public Produto(NovoProdutoRequest novoProdutoRequest) {
+        this.nome = novoProdutoRequest.nome();
+        this.modelo = novoProdutoRequest.modelo();
+        this.codigo = novoProdutoRequest.codigo();
+        this.preco = novoProdutoRequest.preco();
     }
 }
