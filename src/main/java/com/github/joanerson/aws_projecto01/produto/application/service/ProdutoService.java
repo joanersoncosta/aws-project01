@@ -12,4 +12,5 @@ public interface ProdutoService {
     ProdutoCriadoIdResponse criaNovoProduto(NovoProdutoRequest novoProdutoRequest);
     ProdutoResponse buscaProdutoPorId(UUID idProduto);
     List<ProdutoListResponse> listaDeProdutos();
+    ProdutoResponse buscaProdutoPorCodigo(String codigo);
 }

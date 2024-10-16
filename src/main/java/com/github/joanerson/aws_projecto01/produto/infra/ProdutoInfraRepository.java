@@ -47,4 +47,13 @@ public class ProdutoInfraRepository implements ProdutoRepository {
         return produtos;
     }
 
+    @Override
+    public Produto buscaProdutoPorCodigo(String codigo) {
+        log.info("[start] ProdutoInfraRepository - buscaProdutoPorCodigo");
+        Produto produto = produtoSpringDataJpaRepository.findByCodigo(codigo)
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Produto não encontrado com este ID: " + codigo));
+        log.info("[finish] ProdutoInfraRepository - buscaProdutoPorCodigo");
+        return null;
+    }
+
 }

@@ -9,4 +9,5 @@ public interface ProdutoRepository {
     Produto salva(Produto produto);
     Produto buscaProdutoPorId(UUID idProduto);
     Iterable<Produto> listaDeProdutos();
+    Produto buscaProdutoPorCodigo(String codigo);
 }
