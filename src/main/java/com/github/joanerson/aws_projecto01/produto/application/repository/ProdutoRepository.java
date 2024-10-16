@@ -10,4 +10,5 @@ public interface ProdutoRepository {
     Produto buscaProdutoPorId(UUID idProduto);
     Iterable<Produto> listaDeProdutos();
     Produto buscaProdutoPorCodigo(String codigo);
+    void deletaProduto(Produto produto);
 }

@@ -31,8 +31,7 @@ public class ProdutoApplicationService implements ProdutoService{
     @Override
     public ProdutoResponse buscaProdutoPorId(UUID idProduto) {
         log.info("[start] ProdutoApplicationService - buscaProdutoPorId");
-        log.info("[idProduto] {}", idProduto);
-        Produto produto = produtoRepository.buscaProdutoPorId(idProduto);
+        Produto produto = detalhaProduto(idProduto);
         log.info("[finish] ProdutoApplicationService - buscaProdutoPorId");
         return new ProdutoResponse(produto);
     }
@@ -52,6 +51,22 @@ public class ProdutoApplicationService implements ProdutoService{
         Produto produto = produtoRepository.buscaProdutoPorCodigo(codigo);
         log.info("[finish] ProdutoApplicationService - buscaProdutoPorCodigo");
         return null;
+    }
+
+    @Override
+    public void deletaProdutoPorId(UUID idProduto) {
+        log.info("[start] ProdutoApplicationService - deletaProdutoPorId");
+        Produto produto = detalhaProduto(idProduto);
+        produtoRepository.deletaProduto(produto);
+        log.info("[finish] ProdutoApplicationService - deletaProdutoPorId");
+    }
+
+    public Produto detalhaProduto(UUID idProduto) {
+        log.info("[start] ProdutoApplicationService - detalhaProduto");
+        log.info("[idProduto] {}", idProduto);
+        Produto produto = produtoRepository.buscaProdutoPorId(idProduto);
+        log.info("[finish] ProdutoApplicationService - detalhaProduto");
+        return produto;
     }
 
 }

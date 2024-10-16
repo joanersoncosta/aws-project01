@@ -30,4 +30,9 @@ public interface ProdutoAPI {
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping(params = "codigo")
     ProdutoResponse buscaProdutoPorCodigo(@PathParam("codigo") String codigo);
+
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{idProduto}")
+    void deletaProdutoPorId(@PathVariable(name = "idProduto") UUID idProduto);
+
 }

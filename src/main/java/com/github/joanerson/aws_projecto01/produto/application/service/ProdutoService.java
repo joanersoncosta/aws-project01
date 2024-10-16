@@ -13,4 +13,5 @@ public interface ProdutoService {
     ProdutoResponse buscaProdutoPorId(UUID idProduto);
     List<ProdutoListResponse> listaDeProdutos();
     ProdutoResponse buscaProdutoPorCodigo(String codigo);
+    void deletaProdutoPorId(UUID idProduto);
 }
