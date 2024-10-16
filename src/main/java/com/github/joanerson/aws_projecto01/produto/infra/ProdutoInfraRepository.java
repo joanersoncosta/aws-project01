@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Repository
@@ -36,6 +37,14 @@ public class ProdutoInfraRepository implements ProdutoRepository {
                 .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Produto não encontrado com este ID: " + idProduto));
         log.info("[finish] ProdutoInfraRepository - buscaProdutoPorId");
         return produto;
+    }
+
+    @Override
+    public Iterable<Produto> listaDeProdutos() {
+        log.info("[start] ProdutoInfraRepository - listaDeProdutos");
+        Iterable<Produto> produtos = produtoSpringDataJpaRepository.findAll();
+        log.info("[finish] ProdutoInfraRepository - listaDeProdutos");
+        return produtos;
     }
 
 }
