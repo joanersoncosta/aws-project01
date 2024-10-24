@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public interface ProdutoRepository {
     Produto salva(Produto produto);
-    Produto buscaProdutoPorId(UUID idProduto);
+    Produto buscaProdutoPorId(Long idProduto);
     Iterable<Produto> listaDeProdutos();
     Produto buscaProdutoPorCodigo(String codigo);
     void deletaProduto(Produto produto);

@@ -5,13 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.UUID;
-
 @Getter
 @ToString
 @NoArgsConstructor
 public class ProdutoResponse {
-    private UUID idProduto;
+    private Long idProduto;
     private String nome;
     private String modelo;
     private String codigo;

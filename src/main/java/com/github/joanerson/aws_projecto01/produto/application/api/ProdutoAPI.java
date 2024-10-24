@@ -1,5 +1,6 @@
 package com.github.joanerson.aws_projecto01.produto.application.api;
 
+import com.github.joanerson.aws_projecto01.produto.application.api.request.AtualizaProdutoRequest;
 import com.github.joanerson.aws_projecto01.produto.application.api.request.NovoProdutoRequest;
 import com.github.joanerson.aws_projecto01.produto.application.api.response.ProdutoCriadoIdResponse;
 import com.github.joanerson.aws_projecto01.produto.application.api.response.ProdutoListResponse;
@@ -21,7 +22,7 @@ public interface ProdutoAPI {
 
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping("/{idProduto}")
-    ProdutoResponse buscaProdutoPorId(@PathVariable(name = "idProduto") UUID idProduto);
+    ProdutoResponse buscaProdutoPorId(@PathVariable(name = "idProduto") Long idProduto);
 
     @ResponseStatus(code = HttpStatus.OK)
     @GetMapping
@@ -33,6 +34,10 @@ public interface ProdutoAPI {
 
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     @DeleteMapping("/{idProduto}")
-    void deletaProdutoPorId(@PathVariable(name = "idProduto") UUID idProduto);
+    void deletaProdutoPorId(@PathVariable(name = "idProduto") Long idProduto);
+
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    @PatchMapping("/{idProduto}")
+    void autualizaProdutoPorId(@PathVariable(name = "idProduto") Long idProduto, @RequestBody AtualizaProdutoRequest produtoRequest);
 
 }

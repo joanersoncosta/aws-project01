@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -15,7 +14,7 @@ import java.util.stream.StreamSupport;
 @ToString
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProdutoListResponse {
-    private UUID idProduto;
+    private Long idProduto;
     private String nome;
     private String modelo;
     private String codigo;

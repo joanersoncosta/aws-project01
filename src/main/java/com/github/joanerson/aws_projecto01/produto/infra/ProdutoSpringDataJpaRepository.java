@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface ProdutoSpringDataJpaRepository extends CrudRepository<Produto, UUID> {
+public interface ProdutoSpringDataJpaRepository extends CrudRepository<Produto, Long> {
     Optional<Produto> findByCodigo(String codigo);
 }

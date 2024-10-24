@@ -1,5 +1,6 @@
 package com.github.joanerson.aws_projecto01.produto.application.api;
 
+import com.github.joanerson.aws_projecto01.produto.application.api.request.AtualizaProdutoRequest;
 import com.github.joanerson.aws_projecto01.produto.application.api.request.NovoProdutoRequest;
 import com.github.joanerson.aws_projecto01.produto.application.api.response.ProdutoCriadoIdResponse;
 import com.github.joanerson.aws_projecto01.produto.application.api.response.ProdutoListResponse;
@@ -27,7 +28,7 @@ public class ProdutoRestController implements ProdutoAPI {
     }
 
     @Override
-    public ProdutoResponse buscaProdutoPorId(UUID idProduto) {
+    public ProdutoResponse buscaProdutoPorId(Long idProduto) {
         log.info("[start] ProdutoRestController - buscaProdutoPorId");
         ProdutoResponse produtoResponse = produtoService.buscaProdutoPorId(idProduto);
         log.info("[finish] ProdutoRestController - buscaProdutoPorId");
@@ -52,10 +53,17 @@ public class ProdutoRestController implements ProdutoAPI {
     }
 
     @Override
-    public void deletaProdutoPorId(UUID idProduto) {
+    public void deletaProdutoPorId(Long idProduto) {
         log.info("[start] ProdutoRestController - deletaProdutoPorId");
         produtoService.deletaProdutoPorId(idProduto);
         log.info("[finish] ProdutoRestController - deletaProdutoPorId");
+    }
+
+    @Override
+    public void autualizaProdutoPorId(Long idProduto, AtualizaProdutoRequest produtoRequest) {
+        log.info("[start] ProdutoRestController - autualizaProdutoPorId");
+        ProdutoResponse produtoResponse = produtoService.autualizaProduto(idProduto, produtoRequest);
+        log.info("[finish] ProdutoRestController - autualizaProdutoPorId");
     }
 
 }

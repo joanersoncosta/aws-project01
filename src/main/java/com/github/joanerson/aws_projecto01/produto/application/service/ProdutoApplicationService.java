@@ -1,5 +1,6 @@
 package com.github.joanerson.aws_projecto01.produto.application.service;
 
+import com.github.joanerson.aws_projecto01.produto.application.api.request.AtualizaProdutoRequest;
 import com.github.joanerson.aws_projecto01.produto.application.api.request.NovoProdutoRequest;
 import com.github.joanerson.aws_projecto01.produto.application.api.response.ProdutoCriadoIdResponse;
 import com.github.joanerson.aws_projecto01.produto.application.api.response.ProdutoListResponse;
@@ -25,11 +26,11 @@ public class ProdutoApplicationService implements ProdutoService{
         log.info("[novoProdutoRequest] {}", novoProdutoRequest);
         Produto produto = produtoRepository.salva(new Produto(novoProdutoRequest));
         log.info("[finish] ProdutoApplicationService - criaNovoProduto");
-        return null;
+        return new ProdutoCriadoIdResponse(produto);
     }
 
     @Override
-    public ProdutoResponse buscaProdutoPorId(UUID idProduto) {
+    public ProdutoResponse buscaProdutoPorId(Long idProduto) {
         log.info("[start] ProdutoApplicationService - buscaProdutoPorId");
         Produto produto = detalhaProduto(idProduto);
         log.info("[finish] ProdutoApplicationService - buscaProdutoPorId");
@@ -54,19 +55,28 @@ public class ProdutoApplicationService implements ProdutoService{
     }
 
     @Override
-    public void deletaProdutoPorId(UUID idProduto) {
+    public void deletaProdutoPorId(Long idProduto) {
         log.info("[start] ProdutoApplicationService - deletaProdutoPorId");
         Produto produto = detalhaProduto(idProduto);
         produtoRepository.deletaProduto(produto);
         log.info("[finish] ProdutoApplicationService - deletaProdutoPorId");
     }
 
-    public Produto detalhaProduto(UUID idProduto) {
+    public Produto detalhaProduto(Long idProduto) {
         log.info("[start] ProdutoApplicationService - detalhaProduto");
         log.info("[idProduto] {}", idProduto);
         Produto produto = produtoRepository.buscaProdutoPorId(idProduto);
         log.info("[finish] ProdutoApplicationService - detalhaProduto");
         return produto;
+    }
+
+    @Override
+    public void autualizaProduto(Long idProduto, AtualizaProdutoRequest produtoRequest) {
+        log.info("[start] ProdutoApplicationService - autualizaProduto");
+        Produto produto = detalhaProduto(idProduto);
+        produto.edita(produtoRequest);
+        produtoRepository.salva(produto);
+        log.info("[finish] ProdutoApplicationService - autualizaProduto");
     }
 
 }

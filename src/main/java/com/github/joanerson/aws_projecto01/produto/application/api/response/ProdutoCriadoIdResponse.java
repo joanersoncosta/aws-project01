@@ -13,7 +13,7 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ProdutoCriadoIdResponse {
-    private UUID idProduto;
+    private Long idProduto;
 
     public ProdutoCriadoIdResponse(Produto produto){
         this.idProduto = produto.getIdProduto();
