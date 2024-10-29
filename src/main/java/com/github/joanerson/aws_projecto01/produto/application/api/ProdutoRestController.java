@@ -62,7 +62,7 @@ public class ProdutoRestController implements ProdutoAPI {
     @Override
     public void autualizaProdutoPorId(Long idProduto, AtualizaProdutoRequest produtoRequest) {
         log.info("[start] ProdutoRestController - autualizaProdutoPorId");
-        ProdutoResponse produtoResponse = produtoService.autualizaProduto(idProduto, produtoRequest);
+        produtoService.autualizaProduto(idProduto, produtoRequest);
         log.info("[finish] ProdutoRestController - autualizaProdutoPorId");
     }
 

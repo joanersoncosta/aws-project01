@@ -53,6 +53,13 @@
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-sns</artifactId>
+			<version>1.12.520</version> <!-- Verifique por versões mais recentes -->
+		</dependency>
+
 	</dependencies>
 
 	<build>
