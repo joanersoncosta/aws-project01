@@ -60,6 +60,11 @@
 			<version>1.12.520</version> <!-- Verifique por versões mais recentes -->
 		</dependency>
 
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-sqs</artifactId>
+			<version>1.12.560</version> <!-- Verifique por versões mais recentes -->
+		</dependency>
 	</dependencies>
 
 	<build>
